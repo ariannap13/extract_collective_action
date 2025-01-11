@@ -72,6 +72,12 @@ def get_action_sents(text):
 list_texts_tosave = []
 for i, row in tqdm(target_df.iterrows()):
     text = row['OriginalText']
+    action_count = 0
+    word_list_sent = word_tokenize(text)
+    for word in action_dic['action']:
+        action_count += match_word(word, word_list_sent)
+    if action_count < 2:
+        continue
     action_text = get_action_sents(text)
     if test:
         list_texts_tosave.append(row['CommentID'], row['Subreddit'], row['OriginalText'], action_text, row['Label'])
