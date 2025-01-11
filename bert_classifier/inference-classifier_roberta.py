@@ -112,7 +112,7 @@ if dataset == "test" or dataset == "no_action" or dataset == "sub_action" or dat
     data = pd.read_csv("../data/test_set.csv")
 
     # change "Non-action" to "None" in the simplified_label column
-    data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["Label"]]
+    data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["SimplifiedLabel"]]
 
     if layered:
         data = data[data["CommentID"].isin(predicted_data["CommentID"])]

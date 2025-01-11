@@ -70,7 +70,7 @@ test_df = test_df.reset_index(drop=True)
 
 ## project
 if simplified:
-    training_df["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in training_df["Label"]]
+    training_df["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in training_df["SimplifiedLabel"]]
     for label in training_df["simplified_label"].unique():
         print(f"Label: {label}")
         label_emb_train = training_embeddings[training_df[training_df["simplified_label"]==label].index]

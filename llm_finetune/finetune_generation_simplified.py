@@ -39,7 +39,7 @@ if add_synthetic:
 else:
     data =  data = data[data["AugmentationType"]=="None"]
 
-data["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in data["Label"]]
+data["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in data["SimplifiedLabel"]]
 
 # change "Non-action" to "None" in the simplified_label column
 data["simplified_label"] = data["simplified_label"].apply(lambda x: "None" if x == "Non-action" else x)

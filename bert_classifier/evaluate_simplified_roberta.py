@@ -16,7 +16,7 @@ data = pd.read_csv("../data/test_set.csv")
 labels = ["Action", "None"]
 
 # change "Non-action" to "None" in the simplified_label column
-data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["Label"]]
+data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["SimplifiedLabel"]]
 
 test_data = data.copy()
 

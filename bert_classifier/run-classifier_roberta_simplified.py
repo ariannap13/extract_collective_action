@@ -37,7 +37,7 @@ if add_synthetic_data:
 else:
     annotated_data = annotated_data[annotated_data["AugmentationType"] == "None"]
 
-annotated_data["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in annotated_data["Label"]]
+annotated_data["simplified_label"] = ["Non-action" if x=="None" else "Action" for x in annotated_data["SimplifiedLabel"]]
 
 # tranform "label" column to numerical using label2id
 annotated_data["labels"] = annotated_data["simplified_label"].map(label2id)

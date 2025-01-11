@@ -31,7 +31,7 @@ def match_words(words, text):
 if dataset == "test":
     data = pd.read_csv("../data/test_set.csv")
 
-    data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["Label"]]
+    data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["SimplifiedLabel"]]
     df_test = data.copy()
 
 df_test["labels"] = df_test["simplified_label"].apply(lambda x: 0 if x == "Action" else 1)

@@ -7,7 +7,7 @@ labels = ["Action", "Non-action"]
 # Open test data and clean annotations
 data = pd.read_csv("../data/test_set.csv")
 
-data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["Label"]]
+data["simplified_label"] = ["None" if x=="None" else "Action" for x in data["SimplifiedLabel"]]
 
 test_data = data.copy()
 

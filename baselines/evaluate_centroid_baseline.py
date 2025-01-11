@@ -22,7 +22,7 @@ test_data_ann = pd.read_csv("../data/test_set.csv")
 
 test_data = test_data[test_data["CommentID"].isin(test_data_ann["CommentID"])]
 
-test_data["simplified_label"] = ["Non-action" if label == "None" else "Action" for label in test_data["Label"]]
+test_data["simplified_label"] = ["Non-action" if label == "None" else "Action" for label in test_data["SimplifiedLabel"]]
 
 if layered:
     predicted_data = pd.read_csv("../data/predictions/predictions_roberta_simplified_synthetic_weights.csv") # not shared, contact the authors for access
