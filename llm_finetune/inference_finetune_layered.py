@@ -30,7 +30,7 @@ dpo = True
 if dpo:
     dpo_tag = "dpo_"
 else:
-    dpo_tag = ""
+    dpo_tag = "sft_"
 version_n = 6
 base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
 if training_dataset == "annotated_only":
@@ -40,7 +40,7 @@ else:
 
 prompt_v = 6
 
-model_dir = f'../models/llama3_finetuned/merged_peft/{dpo_tag}{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint' # f'./llama3_finetuned/merged_peft/{training_data}_v{version_n}/final_merged_checkpoint' if SFT or f'./llama3_finetuned/dpo_results/{training_data}_v{version_n}/final_checkpoint' if DPO
+model_dir = f'../models/llama3_finetuned/merged_peft/collectiveaction_{dpo_tag}{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint' # f'./llama3_finetuned/merged_peft/{training_data}_v{version_n}/final_merged_checkpoint' if SFT or f'./llama3_finetuned/dpo_results/{training_data}_v{version_n}/final_checkpoint' if DPO
 
 labels2ids = {"Problem-Solution": 0, "Call-to-action": 1, "Intention": 2, "Execution": 3}
 ids2labels = {0: "Problem-Solution", 1: "Call-to-action", 2: "Intention", 3: "Execution"}
@@ -79,12 +79,12 @@ label: """.strip()
 
 def generate_test_prompt6(data_point):
     return f"""
-            You have the following knowledge about levels of commitment to collective action that can be expressed in social media comments: {dim_def}. 
+            You have the following knowledge about levels of participation in collective action that can be expressed in social media comments: {dim_def}. 
             
             ### Definitions and Criteria:
             **Collective Action Problem:** A present issue caused by human actions or decisions that affects a group and can be addressed through individual or collective efforts.
 
-            **Commitment to collective action**: A comment must clearly reference a collective action problem, social movement, or activism by meeting at least one of the levels in the list {dim_def.keys()}.
+            **Participation in collective action**: A comment must clearly reference a collective action problem, social movement, or activism by meeting at least one of the levels in the list {dim_def.keys()}.
 
             Classify the following social media comment into one of the levels within the list {list(dim_def.keys())}. 
 
@@ -92,7 +92,7 @@ def generate_test_prompt6(data_point):
             text: xyz
             label: None
             
-            Return the answer as the corresponding commitment to collective action level label.
+            Return the answer as the corresponding participation in collective action level label.
 
             text: {data_point["text"]}
             label: """.strip()

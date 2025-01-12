@@ -147,7 +147,7 @@ modules = find_all_linear_names(model)
 
 print(modules, flush=True)
 
-output_dir=f"../models/llama3_finetuned/{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}"
+output_dir=f"../models/llama3_finetuned/collectiveaction_sft_{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}"
 
 peft_config = LoraConfig(
     lora_alpha=16,

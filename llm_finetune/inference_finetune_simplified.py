@@ -17,11 +17,11 @@ dpo = True
 if dpo:
     model_tag = "dpo_"
 else:
-    model_tag = ""
+    model_tag = "sft_"
 
 prompt_v = 6
 
-model_dir = f"../models/llama3_finetuned/merged_peft/{model_tag}simplified_v{prompt_v}_prompt_synthetic_more/final_merged_checkpoint"
+model_dir = f"../models/llama3_finetuned/merged_peft/collectiveaction_{model_tag}simplified_v{prompt_v}_prompt_synthetic_more/final_merged_checkpoint"
 
 # Data preparation
 data = pd.read_csv("../data/test_set.csv")

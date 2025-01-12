@@ -29,7 +29,7 @@ dpo = True
 if dpo:
     dpo_tag = "dpo_"
 else:
-    dpo_tag = ""
+    dpo_tag = "sft_"
 version_n = 6
 base_model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
 if training_dataset == "annotated_only":
@@ -39,7 +39,7 @@ else:
 
 prompt_v = 6
 
-model_dir = f'../models/llama3_finetuned/merged_peft/{dpo_tag}{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint' # f'./llama3_finetuned/merged_peft/{training_data}_v{version_n}/final_merged_checkpoint' if SFT or f'./llama3_finetuned/dpo_results/{training_data}_v{version_n}/final_checkpoint' if DPO
+model_dir = f'../models/llama3_finetuned/merged_peft/collectiveaction_{dpo_tag}{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint' # f'./llama3_finetuned/merged_peft/{training_data}_v{version_n}/final_merged_checkpoint' if SFT or f'./llama3_finetuned/dpo_results/{training_data}_v{version_n}/final_checkpoint' if DPO
 
 labels2ids = {"Problem-Solution": 0, "Call-to-action": 1, "Intention": 2, "Execution": 3, "None": 4}
 ids2labels = {0: "Problem-Solution", 1: "Call-to-action", 2: "Intention", 3: "Execution", 4: "None"}

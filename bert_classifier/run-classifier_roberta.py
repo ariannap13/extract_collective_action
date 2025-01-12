@@ -45,7 +45,7 @@ annotated_data["labels"] = annotated_data["Label"].map(label2id)
 
 tot_samples = annotated_data.shape[0]
 
-output_dir = f"../models/classifier_roberta_{synthetic_tag}{balance_strategy}"
+output_dir = f"../models/collectiveaction_roberta_{synthetic_tag}{balance_strategy}"
 num_epochs = 30
 manual_seed = 0
 train_batch_size = 16

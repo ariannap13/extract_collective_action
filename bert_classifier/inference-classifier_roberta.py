@@ -157,7 +157,7 @@ values_action = df_dict_action[0].tolist()
 
 model_args = {"use_multiprocessing": False}
 
-model = ClassificationModel('roberta', f"../models/classifier_roberta{simplified_tag}{synthetic_tag}{balance_strategy}{layered_tag}", use_cuda=cuda_available, args=model_args)
+model = ClassificationModel('roberta', f"../models/collectiveaction_roberta{simplified_tag}{synthetic_tag}{balance_strategy}{layered_tag}", use_cuda=cuda_available, args=model_args)
 vocab = model.tokenizer.get_vocab()
 
 # Preprocess test set

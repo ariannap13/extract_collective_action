@@ -144,7 +144,7 @@ def find_all_linear_names(model):
     return list(lora_module_names)
 modules = find_all_linear_names(model)
 
-output_dir=f"../models/llama3_finetuned/simplified_v{prompt_v}_prompt{synthetic_tag}{synthetic_tag_more}"
+output_dir=f"../models/llama3_finetuned/collectiveaction_sft_simplified_v{prompt_v}_prompt{synthetic_tag}{synthetic_tag_more}"
 
 peft_config = LoraConfig(
     lora_alpha=16,

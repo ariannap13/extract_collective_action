@@ -36,7 +36,7 @@ else:
 n_examples_dpo = 2
 
 prompt_v = 6
-model_name = f'../models/llama3_finetuned/merged_peft/{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint'
+model_name = f'../models/llama3_finetuned/merged_peft/collectiveaction_sft_{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}/final_merged_checkpoint'
 
 # Define the collective action dimensions
 ## Llama3 definitions revised
@@ -201,7 +201,7 @@ elif prompt_v == 4:
         remove_columns=original_columns
     )
 
-output_dir = f"../models/llama3_finetuned/dpo_results/{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}"
+output_dir = f"../models/llama3_finetuned/dpo_results/collectiveaction_dpo_{training_dataset}_v{version_n}_prompt_v{prompt_v}_p{perc}{synthetic_tag}_{balanced}{synthetic_tag_more}{layered_tag}"
 
 training_args = DPOConfig(
     per_device_train_batch_size=1,

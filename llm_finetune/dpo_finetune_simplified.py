@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 
 n_examples_dpo = 1
 
-model_name = f'../models/llama3_finetuned/merged_peft/simplified_v6_prompt_synthetic_more/final_merged_checkpoint'
+model_name = f'../models/llama3_finetuned/merged_peft/collectiveaction_sft_simplified_v6_prompt_synthetic_more/final_merged_checkpoint'
 
 prompt_v = 6
 
@@ -203,7 +203,7 @@ elif prompt_v == 4:
         remove_columns=original_columns
     )
 
-output_dir = f"../models/llama3_finetuned/dpo_results/simplified_v{prompt_v}_prompt{synthetic_tag}{synthetic_tag_more}"
+output_dir = f"../models/llama3_finetuned/dpo_results/collectiveaction_dpo_simplified_v{prompt_v}_prompt{synthetic_tag}{synthetic_tag_more}"
 
 training_args = DPOConfig(
     per_device_train_batch_size=1,
