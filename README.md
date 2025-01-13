@@ -10,6 +10,6 @@ Here is a brief description of the sub-folders, further details can be found in 
 * `./bert_classifier/` contains the scripts to fine-tune the RoBERTa classifier for both the binary and the multi-class tasks and run the corresponding inference.
 * `./llm_zeroshot/` contains the code for the application of LLaMa3 as a zero-shot classifier in the context of both the binary and the multi-class tasks and run the corresponding inference.
 * `./llm_finetune/` contains the code to finetune LLaMa3 with SFT and DPO approaches and run the corresponding inference.
-* `./models/` contains the trained models. Due to size constraints, models will be shared on HuggingFace upon acceptance.
+* `./models/` contains the trained models. Due to size constraints, only the best performing models are shared on [HuggingFace](https://huggingface.co/ariannap22).
 * `./validation/` contains the code to perform the comparison of the approach with topic modeling and stance detection and to evaluate the impact of the dictionary of collective action words on the results. It also contains the analysis of UK parliamentary debates data.
 * `./downstream/`contains the code to perform the downstream tasks (Reddit characterization and climate change case study) and obtain the corresponding plots.
